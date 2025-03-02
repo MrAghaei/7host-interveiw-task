@@ -17,7 +17,7 @@ $custom-colors:(
         'custom-light-faq':#434343,
         'custom-light-blue ':#434343,
         'custom-pink ':#DECBE9,
-        'custom-dark-background  ':#292B33, 
+        'custom-dark-background  ':#292B33,
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
 $primary: #2140D4;
