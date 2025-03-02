@@ -1,4 +1,25 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
 
+$custom-colors:(
+        'custom-light-text1':#4C5D77,
+        'custom-light-text2':#7E8186,
+        'custom-light-text3':#00006D,
+        'custom-light-text4':#4F4F4F,
+        'custom-dark-text1':#81A2D2,
+        'custom-dark-text2':#C1C1C1,
+        'custom-dark-text3':#C8CED6,
+        'custom-purple':#7737FF,
+        'custom-orange':#FF9900,
+        'custom-red':#FB5191,
+        'custom-light-faq':#EDEDED,
+        'custom-light-faq':#434343,
+        'custom-light-blue ':#434343,
+        'custom-pink ':#DECBE9,
+        'custom-dark-background  ':#292B33,
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
 $primary: #2140D4;
 $secondary: #08C056;
 $success: #28a745;
@@ -9,8 +30,4 @@ $light: #FAFBFF ;
 $dark: #222222 ;
 
 
-//#4C5D77
-//#7E8186
-//#00006D
-//#4F4F4F
 @import '~bootstrap/scss/bootstrap';
