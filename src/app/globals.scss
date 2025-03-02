@@ -1,41 +1,36 @@
-
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/mixins';
-
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
 
 $custom-colors: (
-        'custom-light-text1': #4c5d77,
-        'custom-light-text2': #7e8186,
-        'custom-light-text3': #00006d,
-        'custom-light-text4': #4f4f4f,
-        'custom-dark-text1': #81a2d2,
-        'custom-dark-text2': #c1c1c1,
-        'custom-dark-text3': #c8ced6,
-        'custom-purple': #7737ff,
-        'custom-orange': #ff9900,
-        'custom-red': #fb5191,
-        'custom-light-faq': #ededed,
-        'custom-dark-faq': #434343,
-        'custom-light-blue': #434343,
-        'custom-pink': #decbe9,
-        'custom-dark-background': #292b33,
-        'custom-border': #c8d7ff,
-        'custom-primary': #2140d4,
-        'custom-secondary': #08c056
-
+  "custom-light-text1": #4c5d77,
+  "custom-light-text2": #7e8186,
+  "custom-light-text3": #00006d,
+  "custom-light-text4": #4f4f4f,
+  "custom-dark-text1": #81a2d2,
+  "custom-dark-text2": #c1c1c1,
+  "custom-dark-text3": #c8ced6,
+  "custom-purple": #7737ff,
+  "custom-orange": #ff9900,
+  "custom-red": #fb5191,
+  "custom-light-faq": #ededed,
+  "custom-dark-faq": #434343,
+  "custom-light-blue": #434343,
+  "custom-pink": #decbe9,
+  "custom-dark-background": #292b33,
+  "custom-border": #c8d7ff,
+  "custom-primary": #2140d4,
+  "custom-secondary": #08c056,
 );
 $custom-spacers: (
-        heading-x: 6rem,       // 6rem = 96px (if 1rem = 16px)
-        heading-y: 0.75rem // 0.75rem = 12px
+  custom-3: 12px,
+  custom-25: 100px,
 );
 
 $spacers: map-merge($spacers, $custom-spacers);
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
-
-@import '~bootstrap/scss/bootstrap';
-
+@import "~bootstrap/scss/bootstrap";
 
 @each $color, $value in $custom-colors {
   .text-#{$color} {
@@ -44,20 +39,4 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
   .bg-#{$color} {
     background-color: $value !important;
   }
-}
-
-.btn-sizing-primary {
-
-  border-radius: 32px;
-
-
-  padding: 16px 32px;
-
-
-  width: 154px;
-  height: 56px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
