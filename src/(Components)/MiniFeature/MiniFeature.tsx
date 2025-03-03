@@ -1,6 +1,6 @@
-import FeatureCard from "@/(Components)/FeatureCard/FeatureCard";
+import MiniFeatureCard from "@/(Components)/MiniFeatureCard/MiniFeatureCard";
 
-function Feature() {
+function MiniFeature() {
   //region data
   const featureData = [
     { id: 1, name: "Transparent Pricing", image: "/transparent.png" },
@@ -24,11 +24,11 @@ function Feature() {
       </div>
       <div className="d-flex gap-custom-24">
         {featureData.map((data) => (
-          <FeatureCard key={data.id} data={data} />
+          <MiniFeatureCard key={data.id} data={data} />
         ))}
       </div>
     </div>
   );
 }
 
-export default Feature;
+export default MiniFeature;

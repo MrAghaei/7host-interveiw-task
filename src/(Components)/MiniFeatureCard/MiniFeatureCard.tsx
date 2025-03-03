@@ -10,7 +10,7 @@ interface FeatureCardProps {
 }
 //endregion
 
-function FeatureCard({ data }: FeatureCardProps) {
+function MiniFeatureCard({ data }: FeatureCardProps) {
   return (
     <div className="d-flex align-items-center gap-4" key={data.name}>
       <Image src={data.image} alt={data.name} width={64} height={64} />
@@ -19,4 +19,4 @@ function FeatureCard({ data }: FeatureCardProps) {
   );
 }
 
-export default FeatureCard;
+export default MiniFeatureCard;
