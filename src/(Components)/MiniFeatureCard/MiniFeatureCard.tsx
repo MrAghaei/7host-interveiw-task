@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 //region data types
-export interface FeatureCardDataType {
+export interface FeatureCardDataProps {
   name: string;
   image: string;
 }
 interface FeatureCardProps {
-  data: FeatureCardDataType;
+  data: FeatureCardDataProps;
 }
 //endregion
 
