@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import "./Slider.scss";
+import "./Slider.module.scss";
 
 function Slider() {
   //region data
@@ -32,22 +32,19 @@ function Slider() {
 
   //region hooks
   const [activeIndex, setActiveIndex] = useState(0);
-  const sliderRef = useRef(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (sliderRef.current) {
-      console.log(sliderRef.current);
       const slideWidth = sliderRef.current.offsetWidth;
-      console.log(slideWidth);
       const offset = (slideWidth / slidesData.length) * activeIndex * 2;
       sliderRef.current.style.transform = `translateX(${-offset + 220}px)`;
     }
   }, [activeIndex]);
 
   //endregion
-  //region function
 
-  function handleSliderButtonClick(index: number) {
-    console.log("in handle");
+  //region function
+  function handleSliderButtonClick(index: number): void {
     setActiveIndex(index);
   }
   //endregion
