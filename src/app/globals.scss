@@ -32,7 +32,11 @@ $custom-spacers: (
   custom-24: 96px,
   custom-25: 100px,
 );
+$custom-font-sizes: (
+  custom-12: 48px,
+);
 
+$font-sizes: map-merge($font-sizes, $custom-font-sizes);
 $spacers: map-merge($spacers, $custom-spacers);
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
@@ -46,3 +50,16 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
     background-color: $value !important;
   }
 }
+
+//region custom style
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  letter-spacing: -0.01em;
+}
+.fw-bolder {
+  font-weight: 900 !important;
+}
+//endregion

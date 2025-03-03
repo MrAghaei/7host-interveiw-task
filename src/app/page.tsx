@@ -3,6 +3,7 @@ import Hero from "@/(Components)/Hero/Hero";
 import MiniFeature from "@/(Components)/MiniFeature/MiniFeature";
 import BigFeature from "@/(Components)/BigFeature/BigFeature";
 import Slider from "@/(Components)/Slider/Slider";
+import HighlightFeature from "@/(Components)/HighlightFeature/HighlightFeature";
 
 export default function Home() {
   //region data
@@ -43,6 +44,7 @@ export default function Home() {
         <BigFeature key={data.id} data={data} />
       ))}
       <Slider />
+      <HighlightFeature />
     </>
   );
 }
