@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import BootstrapClient from "@/(Components)/BootstrapClient";
 
 const publicSans = Public_Sans({
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 
