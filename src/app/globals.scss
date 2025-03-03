@@ -1,6 +1,6 @@
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
 
 $custom-colors: (
   "custom-light-text1": #4c5d77,
@@ -23,6 +23,7 @@ $custom-colors: (
   "custom-secondary": #08c056,
   "custom-faq-text1": #858383,
   "custom-faq-text2": #212121,
+  "custom-slider-inactive-button": #bed0ff,
 );
 $custom-spacers: (
   custom-3: 12px,
@@ -32,11 +33,13 @@ $custom-spacers: (
   custom-12: 48px,
   custom-13: 52px,
   custom-14: 56px,
+  custom-16: 64px,
   custom-18: 72px,
   custom-24: 96px,
   custom-25: 100px,
 );
 $custom-font-sizes: (
+  custom-9: 36px,
   custom-12: 48px,
 );
 
@@ -59,6 +62,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 body {
   letter-spacing: -0.01em;
