@@ -11,7 +11,7 @@ function Header() {
           </div>
 
           {/* Navigation Links (center) */}
-          <div className="col d-flex gap-4">
+          <div className="d-flex gap-4">
             <button className="btn text-custom-light-text1 fw-semibold">
               Pricing
             </button>
