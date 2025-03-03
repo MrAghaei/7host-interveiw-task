@@ -2,23 +2,22 @@ import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 
 //region data types
-export interface BigFeatureDataType {
+export interface BigFeatureDataProps {
   heading: string;
   headingColor: string;
   text: string;
   image: string;
-  direction: string;
+  isRtl: boolean;
 }
 interface BigFeatureProps {
-  data: BigFeatureDataType;
+  data: BigFeatureDataProps;
 }
 //endregion
 
 function BigFeature({ data }: BigFeatureProps) {
   return (
     <div
-      className="container d-flex align-items-center gap-custom-18 mt-custom-24"
-      dir={data.direction}
+      className={`container d-flex align-items-center justify-content-between gap-custom-18 mt-custom-24 ${data.isRtl ? "flex-row-reverse" : ""}`}
     >
       <Image
         className="rounded-circle"

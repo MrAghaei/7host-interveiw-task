@@ -1,5 +1,6 @@
 import Image from "next/image";
 import style from "./Hero.module.scss";
+import { ChevronRight } from "lucide-react";
 function Hero() {
   return (
     <div className="container d-flex py-custom-12 gap-custom-18">
@@ -15,9 +16,10 @@ function Hero() {
         </p>
         <div className="d-flex gap-4">
           <button
-            className={`btn btn-custom-secondary text-white ${style.btnSizingSecondary}`}
+            className={`d-flex gap-custom-13 btn btn-custom-secondary text-white ${style.btnSizingSecondary}`}
           >
             Get started
+            <ChevronRight />
           </button>
           <button
             className={`btn border border-custom-border text-custom-primary ${style.btnSizingSecondary}`}
