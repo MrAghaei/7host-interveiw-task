@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { CoinModel } from "@/(models)/coin.model";
+import React from "react";
 
 //region data types
 interface CurrencyDialogProps {
-  data: CoinModel;
+  data?: CoinModel;
   isActive: boolean;
   handleDialogClose: () => void;
 }
@@ -31,34 +32,37 @@ function CurrencyDialog({
             <Image src={"/xIcon.svg"} alt={"x icon"} width={48} height={48} />
           </button>
         </div>
-
-        <div className="d-flex flex-column gap-custom-3">
-          <div className="d-flex align-items-center justify-content-between gap-2">
-            <div>
-              <Image
-                src={data.image}
-                alt={data.name}
-                width={56}
-                height={56}
-                className="me-custom-3"
-              />
-              <span className="fw-medium fs-6 me-1">{data.name}</span>
-              <span className="fw-bold text-custom-light-text4">
-                {data.symbol}
-              </span>
+        {!data ? (
+          <div className="text-center">Loading...</div>
+        ) : (
+          <div className="d-flex flex-column gap-custom-3">
+            <div className="d-flex align-items-center justify-content-between gap-2">
+              <div>
+                <Image
+                  src={data.image}
+                  alt={data.name}
+                  width={56}
+                  height={56}
+                  className="me-custom-3"
+                />
+                <span className="fw-medium fs-6 me-1">{data.name}</span>
+                <span className="fw-bold text-custom-light-text4">
+                  {data.symbol}
+                </span>
+              </div>
+              <div>
+                <span className="fs-6 text-custom-light-text2">
+                  {data.lastUpdated} Updated
+                </span>
+              </div>
             </div>
             <div>
-              <span className="fs-6 text-custom-light-text2">
-                {data.lastUpdated} Updated
+              <span className="fs-custom-10 fw-bold">
+                {data.price} <span className="text-custom-secondary ">USD</span>
               </span>
             </div>
           </div>
-          <div>
-            <span className="fs-custom-10 fw-bold">
-              {data.price} <span className="text-custom-secondary ">USD</span>
-            </span>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
