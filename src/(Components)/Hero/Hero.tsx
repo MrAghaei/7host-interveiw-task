@@ -1,6 +1,7 @@
 import Image from "next/image";
 import style from "./Hero.module.scss";
 import { ChevronRight } from "lucide-react";
+import CtaButton from "@/(Components)/CtaButton/CtaButton";
 function Hero() {
   return (
     <div className="container d-flex py-custom-12 gap-custom-18">
@@ -15,12 +16,7 @@ function Hero() {
           management technology.
         </p>
         <div className="d-flex gap-4">
-          <button
-            className={`d-flex gap-custom-13 btn btn-custom-secondary text-white ${style.btnSizingSecondary}`}
-          >
-            Get started
-            <ChevronRight />
-          </button>
+          <CtaButton />
           <button
             className={`btn border border-custom-border text-custom-primary ${style.btnSizingSecondary}`}
           >

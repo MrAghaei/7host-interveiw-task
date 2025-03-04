@@ -5,6 +5,7 @@ import BigFeature from "@/(Components)/BigFeature/BigFeature";
 import Slider from "@/(Components)/Slider/Slider";
 import HighlightFeature from "@/(Components)/HighlightFeature/HighlightFeature";
 import Faq from "@/(Components)/Faq/Faq";
+import CallToAction from "@/(Components)/CallToAction/CallToAction";
 
 export default function Home() {
   //region data
@@ -47,6 +48,7 @@ export default function Home() {
       <Slider />
       <HighlightFeature />
       <Faq />
+      <CallToAction />
     </>
   );
 }
