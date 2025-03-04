@@ -1,5 +1,5 @@
-interface CointRequestDto {
-  vc_currency: string;
+interface CoinRequestDto {
+  vs_currency: string;
   ids?: string;
   category?: string;
   order?: string;

@@ -1,6 +1,5 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
-
-const BASE_URL = "https://api.coingecko.com/api/v3";
+import { API_KEY, BASE_URL } from "@/(configs)/api.config";
 
 class BaseRepoApi {
   private instance: AxiosInstance;
@@ -10,6 +9,9 @@ class BaseRepoApi {
       baseURL: BASE_URL,
       headers: {
         "Content-Type": "application/json",
+        Accept: "application/json",
+        Host: "api.coingecko.com",
+        "X-Cg-Demo-Api-Key": API_KEY,
       },
     });
     this.instance.interceptors.response.use(

@@ -1,61 +1,19 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useCoin } from "@/(repositories)/hooks/useCoin";
 import { CoinModel } from "@/(models)/coin.model";
+import { useEffect, useState } from "react";
 
 function CurrencyList() {
-  //region data
-  const coinData: CoinModel[] = [
-    {
-      id: 1,
-      image: "/coinTest.png",
-      name: "Cardano",
-      symbol: "ADA",
-      price: "0.66",
-      lastUpdated: "1403/12/05",
-    },
-    {
-      id: 1,
-      image: "/coinTest.png",
-      name: "Cardano",
-      symbol: "ALI",
-      price: "0.66",
-      lastUpdated: "1403/12/05",
-    },
-    {
-      id: 1,
-      image: "/coinTest.png",
-      name: "Cardano",
-      symbol: "ADA",
-      price: "0.66",
-      lastUpdated: "1403/12/05",
-    },
-    {
-      id: 1,
-      image: "/coinTest.png",
-      name: "Cardano",
-      symbol: "ADA",
-      price: "0.66",
-      lastUpdated: "1403/12/05",
-    },
-    {
-      id: 1,
-      image: "/coinTest.png",
-      name: "Cardano",
-      symbol: "ADA",
-      price: "0.66",
-      lastUpdated: "1403/12/05",
-    },
-    {
-      id: 1,
-      image: "/coinTest.png",
-      name: "Cardano",
-      symbol: "ADA",
-      price: "0.66",
-      lastUpdated: "1403/12/05",
-    },
-  ];
-  //endregion
+  const { fetchCoinsData, coinsData } = useCoin();
+  const [page, setPage] = useState<number>(0);
+
+  useEffect(() => {
+    const fetchData = async () => await fetchCoinsData({ page });
+    fetchData().then();
+    setPage((prev) => prev + 1);
+  }, []);
 
   return (
     <div className="container mt-custom-24">
@@ -81,10 +39,10 @@ function CurrencyList() {
             </span>
           </div>
         </div>
-        {coinData.map((data, index) => (
+        {coinsData.map((data, index) => (
           <div
             className="d-flex justify-content-between py-custom-4 px-3"
-            key={data.id}
+            key={data.name}
           >
             <div className="d-flex align-items-center gap-custom-12">
               <span>{index + 1}</span>
