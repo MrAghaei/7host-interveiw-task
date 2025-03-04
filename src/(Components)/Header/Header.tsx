@@ -1,5 +1,5 @@
-import Image from "next/image";
 import style from "./Header.module.scss";
+import Logo from "@/(Components)/Logo/Logo";
 function Header() {
   return (
     <header className="py-custom-3 border-bottom border-custom-border">
@@ -7,7 +7,7 @@ function Header() {
         <div className="d-flex col gap-custom-25 align-items-center">
           {/* Logo */}
           <div className="col-auto">
-            <Image src="/logo.png" alt="logo" width={77} height={20} />
+            <Logo />
           </div>
 
           {/* Navigation Links (center) */}
