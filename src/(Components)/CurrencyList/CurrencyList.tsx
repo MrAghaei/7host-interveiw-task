@@ -1,20 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { CoinModel } from "@/(models)/coin.model";
 
-//region data types
-export interface CoinDataProps {
-  id: number;
-  image: string;
-  name: string;
-  symbol: string;
-  price: string;
-  lastUpdated: string;
-}
-//endregion
 function CurrencyList() {
   //region data
-  const coinData: CoinDataProps[] = [
+  const coinData: CoinModel[] = [
     {
       id: 1,
       image: "/coinTest.png",
