@@ -1,71 +1,43 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useCoin } from "@/(repositories)/hooks/useCoin";
+import { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 
-//region data types
-export interface CoinDataProps {
-  id: number;
-  image: string;
-  name: string;
-  symbol: string;
-  price: string;
-  lastUpdated: string;
-}
-//endregion
 function CurrencyList() {
-  //region data
-  const coinData: CoinDataProps[] = [
-    {
-      id: 1,
-      image: "/coinTest.png",
-      name: "Cardano",
-      symbol: "ADA",
-      price: "0.66",
-      lastUpdated: "1403/12/05",
-    },
-    {
-      id: 1,
-      image: "/coinTest.png",
-      name: "Cardano",
-      symbol: "ALI",
-      price: "0.66",
-      lastUpdated: "1403/12/05",
-    },
-    {
-      id: 1,
-      image: "/coinTest.png",
-      name: "Cardano",
-      symbol: "ADA",
-      price: "0.66",
-      lastUpdated: "1403/12/05",
-    },
-    {
-      id: 1,
-      image: "/coinTest.png",
-      name: "Cardano",
-      symbol: "ADA",
-      price: "0.66",
-      lastUpdated: "1403/12/05",
-    },
-    {
-      id: 1,
-      image: "/coinTest.png",
-      name: "Cardano",
-      symbol: "ADA",
-      price: "0.66",
-      lastUpdated: "1403/12/05",
-    },
-    {
-      id: 1,
-      image: "/coinTest.png",
-      name: "Cardano",
-      symbol: "ADA",
-      price: "0.66",
-      lastUpdated: "1403/12/05",
-    },
-  ];
+  //region variables
+  const PAGE_NUMBER_TO_SHOW_MORE = 3;
+  const MAX_PAGE_NUMBER_TO_SHOW = 10;
   //endregion
 
+  //region functions
+  function handleShowMoreClick(): void {
+    increasePage();
+  }
+  function increasePage(): void {
+    setPage((prev) => prev + 1);
+  }
+  //endregion
+  //region hooks
+  const { fetchCoinsData, coinsData } = useCoin();
+  const [page, setPage] = useState<number>(0);
+
+  const { ref: lastCoinItemRef, inView } = useInView({
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    if (inView && page !== 3 && page < MAX_PAGE_NUMBER_TO_SHOW - 1) {
+      increasePage();
+    }
+  }, [inView]);
+
+  useEffect(() => {
+    const fetchData = async () => await fetchCoinsData({ page });
+    fetchData().then();
+  }, [page]);
+  //endregion
   return (
     <div className="container mt-custom-24">
       <div
@@ -90,8 +62,9 @@ function CurrencyList() {
             </span>
           </div>
         </div>
-        {coinData.map((data, index) => (
+        {coinsData.map((data, index) => (
           <div
+            ref={coinsData.length - 1 === index ? lastCoinItemRef : null}
             className="d-flex justify-content-between py-custom-4 px-3"
             key={data.id}
           >
@@ -119,13 +92,15 @@ function CurrencyList() {
             </div>
           </div>
         ))}
-
-        <button
-          style={{ borderRadius: "32px" }}
-          className="btn btn-custom-primary py-custom-4 px-custom-8 w-25 align-self-center mt-custom-14"
-        >
-          Show More
-        </button>
+        {page === PAGE_NUMBER_TO_SHOW_MORE && (
+          <button
+            onClick={handleShowMoreClick}
+            style={{ borderRadius: "32px" }}
+            className="btn btn-custom-primary py-custom-4 px-custom-8 w-25 align-self-center mt-custom-14"
+          >
+            Show More
+          </button>
+        )}
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { CoinDataProps } from "@/(Components)/CurrencyList/CurrencyList";
+import { CoinModel } from "@/(models)/coin.model";
 
 //region data types
 interface CurrencyDialogProps {
-  data: CoinDataProps;
+  data: CoinModel;
   isActive: boolean;
   handleDialogClose: () => void;
 }

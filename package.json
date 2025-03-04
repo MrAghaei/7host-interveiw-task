@@ -9,16 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/moment-jalaali": "^0.7.9",
+    "axios": "^1.8.1",
     "bootstrap": "^5.3.3",
     "lucide-react": "^0.477.0",
+    "moment-jalaali": "^0.10.4",
     "next": "15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-intersection-observer": "^9.15.1",
     "sass": "^1.85.1",
     "swiper": "^11.2.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/moment": "^2.11.29",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
