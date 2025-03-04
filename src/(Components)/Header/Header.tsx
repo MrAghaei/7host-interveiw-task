@@ -1,5 +1,6 @@
 import style from "./Header.module.scss";
 import Logo from "@/(Components)/Logo/Logo";
+import Link from "next/link";
 function Header() {
   return (
     <header className="py-custom-3 border-bottom border-custom-border">
@@ -21,9 +22,12 @@ function Header() {
             <button className="btn text-custom-light-text1 fw-semibold">
               FAQ
             </button>
-            <button className="btn text-custom-secondary fw-semibold">
+            <Link
+              href="/currencies"
+              className="btn text-custom-secondary fw-semibold"
+            >
               Currencies
-            </button>
+            </Link>
           </div>
         </div>
 
