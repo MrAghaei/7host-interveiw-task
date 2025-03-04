@@ -1,6 +1,5 @@
 import Image from "next/image";
 import style from "./Hero.module.scss";
-import { ChevronRight } from "lucide-react";
 import CtaButton from "@/(Components)/CtaButton/CtaButton";
 function Hero() {
   return (
