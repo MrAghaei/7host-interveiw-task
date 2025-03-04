@@ -1,7 +1,9 @@
-//region data types
+"use client";
 import Image from "next/image";
+import Link from "next/link";
 
-interface CoinDataProps {
+//region data types
+export interface CoinDataProps {
   id: number;
   image: string;
   name: string;
@@ -25,7 +27,7 @@ function CurrencyList() {
       id: 1,
       image: "/coinTest.png",
       name: "Cardano",
-      symbol: "ADA",
+      symbol: "ALI",
       price: "0.66",
       lastUpdated: "1403/12/05",
     },
@@ -63,6 +65,7 @@ function CurrencyList() {
     },
   ];
   //endregion
+
   return (
     <div className="container mt-custom-24">
       <div
@@ -94,16 +97,21 @@ function CurrencyList() {
           >
             <div className="d-flex align-items-center gap-custom-12">
               <span>{index + 1}</span>
-              <div className="d-flex align-items-center gap-2">
+              <Link
+                href={`/currencies/${data.symbol}`}
+                className="d-flex align-items-center gap-2 btn"
+              >
                 <Image
                   src={data.image}
                   alt={data.name}
                   width={32}
                   height={32}
                 />
-                <span>{data.name}</span>
-                <span>{data.symbol}</span>
-              </div>
+                <span className="fw-medium fs-6">{data.name}</span>
+                <span className="fw-bold text-custom-light-text4">
+                  {data.symbol}
+                </span>
+              </Link>
             </div>
             <div className="d-flex align-items-center gap-custom-12 justify-content-between w-25">
               <span>{data.price}</span>
