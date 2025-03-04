@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./DarkModeToggle.scss";
-import { Sun } from "lucide-react";
-import Image from "next/image"; // Custom styles
+import Image from "next/image";
 
 const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(
