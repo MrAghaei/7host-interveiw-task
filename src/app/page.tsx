@@ -6,6 +6,7 @@ import Slider from "@/(Components)/Slider/Slider";
 import HighlightFeature from "@/(Components)/HighlightFeature/HighlightFeature";
 import Faq from "@/(Components)/Faq/Faq";
 import CallToAction from "@/(Components)/CallToAction/CallToAction";
+import Footer from "@/(Components)/Footer/Footer";
 
 export default function Home() {
   //region data
@@ -49,6 +50,7 @@ export default function Home() {
       <HighlightFeature />
       <Faq />
       <CallToAction />
+      <Footer />
     </>
   );
 }
