@@ -1,24 +1,23 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "@/(Components)/Header/Header";
 import CurrencyHero from "@/(Components)/CurrencyHero/CurrencyHero";
 import CurrencyDialog from "@/(Components)/CurrencyDialog/CurrencyDialog";
-import { useRouter } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
+import { useCoin } from "@/(repositories)/hooks/useCoin";
 
 function Page() {
-  //region data
-  const data = {
-    id: 1,
-    image: "/coinTest.png",
-    name: "Cardano",
-    symbol: "ADA",
-    price: "0.66",
-    lastUpdated: "1403/12/05",
-  };
-  //endregion
   //region hooks
+  const { fetchCoinById, coinData } = useCoin();
+  const params = useParams<{ id: string }>();
   const [isDialogActive, setIsDialogActive] = useState(true);
   const router = useRouter();
+
+  useEffect(() => {
+    const fetchData = async () => fetchCoinById(params.id);
+    console.log(params);
+    fetchData().then();
+  }, []);
   //endregion
 
   //region functions
@@ -27,11 +26,12 @@ function Page() {
     router.push("/currencies");
   }
   //endregion
+
   return (
     <div className="position-relative min-vh-100">
       <Header />
       <CurrencyDialog
-        data={data}
+        data={coinData}
         isActive={isDialogActive}
         handleDialogClose={handleDialogClose}
       />

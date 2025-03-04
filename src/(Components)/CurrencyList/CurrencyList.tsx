@@ -20,11 +20,12 @@ function CurrencyList() {
   }
   //endregion
   //region hooks
-  const { fetchCoinsData, coinsData } = useCoin();
+  const { fetchCoinsData, coinsData, isAllCoinsFetchLoading } = useCoin();
   const [page, setPage] = useState<number>(0);
 
   const { ref: lastCoinItemRef, inView } = useInView({
-    threshold: 0,
+    threshold: 1,
+    delay: 2000,
   });
 
   useEffect(() => {
@@ -38,6 +39,7 @@ function CurrencyList() {
     fetchData().then();
   }, [page]);
   //endregion
+
   return (
     <div className="container mt-custom-24">
       <div
@@ -71,7 +73,7 @@ function CurrencyList() {
             <div className="d-flex align-items-center gap-custom-12">
               <span>{index + 1}</span>
               <Link
-                href={`/currencies/${data.symbol}`}
+                href={`/currencies/${data.id}`}
                 className="d-flex align-items-center gap-2 btn"
               >
                 <Image
@@ -92,7 +94,10 @@ function CurrencyList() {
             </div>
           </div>
         ))}
-        {page === PAGE_NUMBER_TO_SHOW_MORE && (
+        {isAllCoinsFetchLoading && (
+          <div className="text-center">Loading...</div>
+        )}
+        {!isAllCoinsFetchLoading && page === PAGE_NUMBER_TO_SHOW_MORE && (
           <button
             onClick={handleShowMoreClick}
             style={{ borderRadius: "32px" }}
