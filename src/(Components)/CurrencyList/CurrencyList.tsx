@@ -111,6 +111,13 @@ function CurrencyList() {
             </div>
           </div>
         ))}
+
+        <button
+          style={{ borderRadius: "32px" }}
+          className="btn btn-custom-primary py-custom-4 px-custom-8 w-25 align-self-center mt-custom-14"
+        >
+          Show More
+        </button>
       </div>
     </div>
   );
