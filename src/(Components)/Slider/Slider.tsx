@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import "./Slider.module.scss";
+import style from "./Slider.module.scss";
 
 function Slider() {
   //region data
@@ -50,7 +50,9 @@ function Slider() {
   //endregion
 
   return (
-    <div className="container slider-container d-flex flex-column gap-custom-12 overflow-hidden">
+    <div
+      className={`container ${style.sliderContainer} d-flex flex-column gap-custom-12 overflow-hidden`}
+    >
       <div
         className="mt-custom-24 "
         ref={sliderRef}

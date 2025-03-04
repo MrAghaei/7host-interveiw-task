@@ -1,10 +1,10 @@
-.slider-container {
+.sliderContainer {
   position: relative;
   overflow: hidden;
 }
 
-.slider-container::before,
-.slider-container::after {
+.sliderContainer::before,
+.sliderContainer::after {
   content: "";
   position: absolute;
   top: 0;
@@ -14,7 +14,7 @@
   pointer-events: none;
 }
 
-.slider-container::before {
+.sliderContainer::before {
   left: 0;
   background: linear-gradient(
     to right,
@@ -23,7 +23,7 @@
   );
 }
 
-.slider-container::after {
+.sliderContainer::after {
   right: 0;
   background: linear-gradient(
     to left,
