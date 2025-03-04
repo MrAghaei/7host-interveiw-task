@@ -1,0 +1,88 @@
+body {
+  transition:
+    background 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+}
+body.dark-mode {
+  background-color: #292b33;
+  color: white;
+}
+
+.toggle-container {
+  width: 60px;
+  height: 32px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.toggle-container.light {
+  background: #e5e7eb;
+}
+
+.toggle-container.dark {
+  background: #1e1e1e;
+}
+
+.toggle-circle {
+  transform: rotate(180deg);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.toggle-container.dark .toggle-circle {
+  transform: translateX(28px) rotate(-180deg);
+  color: white;
+}
+
+.toggle-container.light .toggle-circle {
+  transform: translateX(0);
+
+  color: white;
+}
+
+.toggle-icon-switch {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .icon {
+    position: absolute;
+    transition:
+      opacity 0.5s ease-in-out,
+      transform 0.5s ease-in-out;
+  }
+
+  .light-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  .dark-icon {
+    opacity: 0;
+    transform: rotate(-180deg);
+  }
+
+  .dark-mode & {
+    .light-icon {
+      opacity: 0;
+      transform: rotate(180deg);
+    }
+
+    .dark-icon {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import Logo from "@/(Components)/Logo/Logo";
 import Image from "next/image";
+import DarkModeToggle from "@/(Components)/DarkModeToggle/DarkModeToggle";
 
 function Footer() {
   return (
@@ -7,7 +8,7 @@ function Footer() {
       <div className="d-flex w-100 justify-content-between">
         <div className="d-flex flex-column justify-content-between">
           <Logo />
-          <div>Dark Mode</div>
+          <DarkModeToggle />
         </div>
         <div className="row row-cols-2 g-2">
           <div className="col">
@@ -65,7 +66,7 @@ function Footer() {
           <a
             href={"https://www.7ho.st/"}
             target="_blank"
-            className="link-underline-primary"
+            className="link-underline-custom-primary text-custom-primary"
           >
             7ho.st
           </a>
