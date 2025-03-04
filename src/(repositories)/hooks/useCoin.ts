@@ -13,6 +13,7 @@ export function useCoin() {
     setIsAllCoinsFetchLoading(true);
     try {
       const data = await coinService.getAllCoins(pageable);
+      // setCoinsData(data);
       setCoinsData((prev) => prev.concat(data));
     } finally {
       setIsAllCoinsFetchLoading(false);

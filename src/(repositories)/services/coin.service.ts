@@ -14,7 +14,8 @@ class CoinService {
       per_page: pageable.per_page || DEFAULT_PAGE_SIZE,
     };
     const response = await coinRepoApi.getAllCoins(body);
-    return response.map(this._convertCoinResponseDtoToCoinModel);
+    const test = response.map(this._convertCoinResponseDtoToCoinModel);
+    return test;
   }
 
   public async getCoinById(id: string): Promise<CoinModel> {

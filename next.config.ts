@@ -1,17 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // images: {
-  //   remotePatterns: [
-  //     {
-  //       protocol: "https",
-  //       hostname: "coin-images.coingecko.com",
-  //       port: "",
-  //       pathname: "/account123/**",
-  //       search: "",
-  //     },
-  //   ],
-  // },
+  images: {
+    domains: ["coin-images.coingecko.com"],
+  },
+  //TODO: remove this
+  reactStrictMode: false,
 };
 
 export default nextConfig;
