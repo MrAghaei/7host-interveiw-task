@@ -10,7 +10,7 @@ function MiniFeature() {
   //endregion
 
   return (
-    <div className="container-fluid d-flex align-items-center flex-column gap-2 gap-xxl-5">
+    <div className="container-fluid d-flex align-items-center flex-column gap-2 gap-lg-5">
       <div className="d-flex flex-column align-items-center">
         <h2 className={`fs-1 text-center ${style.customWidth}`}>
           <span className="text-custom-light-text4 fw-bolder">
@@ -22,7 +22,7 @@ function MiniFeature() {
           Simple, fast, effortlessly
         </p>
       </div>
-      <div className="d-flex flex-column flex-xxl-row gap-3 gap-xxl-custom-24">
+      <div className="d-flex flex-column flex-lg-row gap-3 gap-lg-custom-24">
         {featureData.map((data) => (
           <MiniFeatureCard key={data.id} data={data} />
         ))}

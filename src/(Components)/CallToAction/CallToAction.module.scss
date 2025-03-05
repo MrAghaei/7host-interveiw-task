@@ -1,0 +1,9 @@
+.customBorderRadius {
+  border-radius: 0px;
+  padding: 0;
+}
+@media (min-width: 1400px) {
+  .customBorderRadius {
+    border-radius: 56px;
+  }
+}

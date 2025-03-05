@@ -23,7 +23,13 @@ function Hero() {
           </button>
         </div>
       </div>
-      <Image src={"/hero.png"} alt={"hero"} width={500} height={400} />
+      <Image
+        className="img-fluid"
+        src={"/hero.png"}
+        alt={"hero"}
+        width={500}
+        height={400}
+      />
     </div>
   );
 }

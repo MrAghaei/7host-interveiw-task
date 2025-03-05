@@ -31,7 +31,7 @@ function Slider() {
   //endregion
 
   //region hooks
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
   const sliderRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (sliderRef.current) {
