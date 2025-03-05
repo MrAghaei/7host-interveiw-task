@@ -3,7 +3,7 @@ import style from "./Hero.module.scss";
 import CtaButton from "@/(Components)/CtaButton/CtaButton";
 function Hero() {
   return (
-    <div className="container d-flex flex-column flex-lg-row py-custom-12 px-custom-8 px-lg-0 text-center text-lg-start gap-custom-18">
+    <div className="container d-flex justify-content-between flex-column flex-lg-row py-custom-12 px-custom-8 px-lg-0 text-center text-lg-start gap-custom-18">
       <div
         className={`d-flex flex-column gap-custom-8 ${style.heroTextSectionSizing}`}
       >

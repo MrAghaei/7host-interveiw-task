@@ -1,4 +1,4 @@
-import Header from "@/(Components)/Header/Header";
+import HeaderDesktop from "@/(Components)/HeaderDesktop/HeaderDesktop";
 import Hero from "@/(Components)/Hero/Hero";
 import MiniFeature from "@/(Components)/MiniFeature/MiniFeature";
 import BigFeature from "@/(Components)/BigFeature/BigFeature";
@@ -7,6 +7,8 @@ import HighlightFeature from "@/(Components)/HighlightFeature/HighlightFeature";
 import Faq from "@/(Components)/Faq/Faq";
 import CallToAction from "@/(Components)/CallToAction/CallToAction";
 import Footer from "@/(Components)/Footer/Footer";
+import HeaderMobile from "@/(Components)/HeaderMobile/HeaderMobile";
+import Header from "@/(Components)/Header/Header";
 
 export default function Home() {
   //region data
