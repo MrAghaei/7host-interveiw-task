@@ -1,0 +1,47 @@
+.custom-button {
+  transition: all 0.5s ease;
+  border-radius: 32px !important;
+  padding: 16px 32px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  &.filled {
+    &.primary {
+      background: #2140d4;
+      color: #f7fafc;
+      &:hover {
+        background: #65bbe5;
+        color: #5a89ff;
+      }
+    }
+
+    &.secondary {
+      background: #08c056;
+      color: #f7fafc;
+      &:hover {
+        background: #65e59c;
+        color: #07813b;
+      }
+    }
+  }
+
+  &.outlined {
+    background: transparent;
+    border: 1px solid #bed0ff;
+    color: #2140d4;
+    &:hover {
+      background: transparent;
+      border: 1px solid #65bbe5;
+      color: #5a89ff;
+    }
+  }
+
+  &.simple {
+    background: transparent;
+    color: #2140d4;
+    &:hover {
+      background: transparent;
+      color: #5a89ff;
+    }
+  }
+}

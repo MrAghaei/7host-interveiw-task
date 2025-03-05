@@ -1,6 +1,7 @@
-import CtaButton from "@/(Components)/CtaButton/CtaButton";
+import CustomButton from "@/(Components)/CustomButton/CustomButton";
 import Image from "next/image";
 import style from "./CallToAction.module.scss";
+import { ChevronRight } from "lucide-react";
 
 function CallToAction() {
   return (
@@ -33,8 +34,13 @@ function CallToAction() {
             No credit card required.
           </p>
         </div>
-        <div className="z-1">
-          <CtaButton />
+        <div className="z-1 align-self-xxl-end">
+          <CustomButton
+            text={"Get Started"}
+            color={"secondary"}
+            rightIcon={<ChevronRight />}
+            type={"filled"}
+          />
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
+import CustomButton from "@/(Components)/CustomButton/CustomButton";
 
 //region data types
 export interface BigFeatureDataProps {
@@ -35,10 +36,13 @@ function BigFeature({ data }: BigFeatureProps) {
           {data.heading}
         </h2>
         <p className="fs-4 text-custom-light-text2">{data.text}</p>
-        <button className="d-flex gap-3 btn text-custom-primary align-self-end">
-          <p>Learn More</p>
-          <ChevronRight />
-        </button>
+        <div className="align-self-end">
+          <CustomButton
+            text={"Learn More"}
+            rightIcon={<ChevronRight />}
+            type={"simple"}
+          />
+        </div>
       </div>
     </div>
   );
