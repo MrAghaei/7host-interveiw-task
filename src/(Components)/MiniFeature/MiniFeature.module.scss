@@ -1,9 +1,9 @@
 .customWidth {
-  width: 100%;
+  width: 75%;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .customWidth {
-    width: 75%;
+    width: 100%;
   }
 }
