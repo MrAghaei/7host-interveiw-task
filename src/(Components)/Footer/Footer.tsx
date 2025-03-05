@@ -3,41 +3,48 @@ import Image from "next/image";
 import DarkModeToggle from "@/(Components)/DarkModeToggle/DarkModeToggle";
 
 function Footer() {
+  //region data
+  const footerLinks = [
+    {
+      name: "Pricing",
+      link: "/ricing",
+    },
+    {
+      name: "Terms of Service",
+      link: "/terms",
+    },
+    {
+      name: "How it Works",
+      link: "/howitworks",
+    },
+    {
+      name: "Privacy Policy",
+      link: "/policy",
+    },
+    {
+      name: "FAQ",
+      link: "",
+    },
+  ];
+  //endregion
+
   return (
     <footer className="container d-flex flex-column align-items-center mt-custom-24 py-custom-12 gap-custom-16">
-      <div className="d-flex w-100 justify-content-between">
-        <div className="d-flex flex-column justify-content-between">
+      <div className="d-flex w-100 flex-column  gap-5 flex-md-row gap-md-0 align-items-center justify-content-between">
+        <div className="d-flex gap-custom-14 flex-column align-self-md-start justify-content-between">
           <Logo />
           <DarkModeToggle />
         </div>
-        <div className="row row-cols-2 g-2">
-          <div className="col">
-            <button className="btn fw-bold fs-6 text-custom-light-text1">
-              Pricing
-            </button>
-          </div>
-          <div className="col">
-            <button className="btn fw-bold fs-6 text-custom-light-text1">
-              Terms of Service
-            </button>
-          </div>
-          <div className="col">
-            <button className="btn fw-bold fs-6 text-custom-light-text1">
-              How it Works
-            </button>
-          </div>
-          <div className="col">
-            <button className="btn fw-bold fs-6 text-custom-light-text1">
-              Privacy Policy
-            </button>
-          </div>
-          <div className="col">
-            <button className="btn fw-bold fs-6 text-custom-light-text1">
-              FAQ
-            </button>
-          </div>
+        <div className="row row-cols-1 row-cols-md-2 g-2">
+          {footerLinks.map((data) => (
+            <div key={data.name} className="col d-flex justify-content-center">
+              <button className="btn fw-bold fs-6 text-custom-light-text1">
+                {data.name}
+              </button>
+            </div>
+          ))}
         </div>
-        <div className="d-flex gap-custom-8">
+        <div className="d-flex align-self-md-start gap-custom-8">
           <Image
             src={"/instagram.svg"}
             alt={"instagram logo"}
