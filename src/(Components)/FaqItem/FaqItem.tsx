@@ -1,4 +1,5 @@
 import { CircleMinus, CirclePlus } from "lucide-react";
+import style from "./FaqItem.module.scss";
 
 //region data types
 interface FaqItemDataProps {
@@ -22,7 +23,7 @@ function FaqItem({ data, handleClick }: FaqItemProps) {
         </div>
       </div>
       <p
-        className={`text-custom-faq-text1 fw-light ${data.isActive ? "" : "d-none"}`}
+        className={`text-custom-faq-text1 fw-light ${style.description} ${data.isActive ? style.activeDescription : style.inActiveDescription}`}
       >
         {data.text}
       </p>

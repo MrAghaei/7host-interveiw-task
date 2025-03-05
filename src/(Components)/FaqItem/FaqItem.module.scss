@@ -1,0 +1,12 @@
+.activeDescription {
+  height: 60px;
+  opacity: 100;
+}
+.inActiveDescription {
+  height: 0;
+  opacity: 0;
+}
+.description {
+  transition: all 0.7s ease;
+  margin: 0;
+}

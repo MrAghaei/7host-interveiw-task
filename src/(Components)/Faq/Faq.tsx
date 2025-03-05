@@ -62,7 +62,7 @@ function Faq() {
   function handleFaqClick(id: number) {
     const updatedFaqItems = faqItems.map((item) => ({
       ...item,
-      isActive: item.id === id,
+      isActive: !item.isActive && item.id === id,
     }));
     setFaqItems(updatedFaqItems);
   }
