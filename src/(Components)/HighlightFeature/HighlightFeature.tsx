@@ -17,6 +17,7 @@ function HighlightFeature() {
       </div>
 
       <Image
+        className="img-fluid"
         src={"/highlightFeature.png"}
         alt={"highlight feature"}
         width={940}
