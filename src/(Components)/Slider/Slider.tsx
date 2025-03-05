@@ -51,7 +51,7 @@ function Slider() {
 
   return (
     <div
-      className={`container ${style.sliderContainer} d-flex flex-column gap-custom-12 overflow-hidden`}
+      className={`container ${style.sliderContainer} d-none d-xl-flex flex-column gap-custom-12 overflow-hidden`}
     >
       <div
         className="mt-custom-24 "
