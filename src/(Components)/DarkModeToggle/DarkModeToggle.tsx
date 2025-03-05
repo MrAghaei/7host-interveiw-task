@@ -5,37 +5,38 @@ import "./DarkModeToggle.scss";
 import Image from "next/image";
 
 const DarkModeToggle = () => {
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("theme") === "dark",
-  );
+  const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("dark-mode");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.body.classList.remove("dark-mode");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
+  // useEffect(() => {
+  //   if (darkMode) {
+  //     document.body.classList.add("dark-mode");
+  //     localStorage.setItem("theme", "dark");
+  //   } else {
+  //     document.body.classList.remove("dark-mode");
+  //     localStorage.setItem("theme", "light");
+  //   }
+  // }, [darkMode]);
 
   return (
     <div className="d-flex gap-3 align-items-center justify-content-center">
       <div className="toggle-icon-switch">
-        <Image
-          src="/lightModeIcon.svg"
-          alt="Light mode"
-          width={32}
-          height={32}
-          className="icon light-icon"
-        />
-        <Image
-          src="/darkModeIcon.svg"
-          alt="Dark mode"
-          width={32}
-          height={32}
-          className="icon dark-icon"
-        />
+        {darkMode ? (
+          <Image
+            src="/darkModeIcon.svg"
+            alt="Dark mode"
+            width={32}
+            height={32}
+            className="icon dark-icon"
+          />
+        ) : (
+          <Image
+            src="/lightModeIcon.svg"
+            alt="Light mode"
+            width={32}
+            height={32}
+            className="icon light-icon"
+          />
+        )}
       </div>
 
       <div
