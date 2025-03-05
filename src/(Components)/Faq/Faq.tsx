@@ -1,6 +1,7 @@
 "use client";
 import FaqItem from "@/(Components)/FaqItem/FaqItem";
 import { useState } from "react";
+import style from "./Faq.module.scss";
 //region data
 const faqItemData = [
   {
@@ -67,7 +68,9 @@ function Faq() {
   }
   //endregion
   return (
-    <div className="container d-flex flex-column align-items-center bg-custom-light-faq rounded-5 p-custom-14 mt-custom-24">
+    <div
+      className={`container-xxl d-flex flex-column align-items-center bg-custom-light-faq p-custom-14 mt-custom-24 ${style.customBorderRadius}`}
+    >
       <div className="d-flex flex-column align-items-center gap-custom gap-4">
         <h3 className="fw-bolder">FAQ</h3>
         <p className="text-custom-faq-text1 fw-medium">

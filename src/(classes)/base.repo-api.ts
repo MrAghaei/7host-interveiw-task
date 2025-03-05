@@ -10,7 +10,6 @@ class BaseRepoApi {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Host: "api.coingecko.com",
         "X-Cg-Demo-Api-Key": API_KEY,
       },
     });

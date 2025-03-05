@@ -1,12 +1,14 @@
 import CtaButton from "@/(Components)/CtaButton/CtaButton";
 import Image from "next/image";
+import style from "./CallToAction.module.scss";
 
 function CallToAction() {
   return (
-    <div className="container mt-custom-24">
+    <div className="mt-custom-24 ">
       <div
-        className=" overflow-hidden position-relative d-flex bg-custom-slider-inactive-button px-custom-20 py-custom-30 justify-content-between align-items-center"
-        style={{ borderRadius: "56px" }}
+        className={`container-xxl overflow-hidden position-relative
+         d-flex flex-column flex-xxl-row bg-custom-slider-inactive-button
+          px-custom-20 gap-custom-12 gap-xxl-0 py-custom-30 justify-content-between align-items-center ${style.customBorderRadius}`}
       >
         <Image
           className="position-absolute top-0 start-0 z-0 opacity-25"

@@ -31,7 +31,7 @@ function Slider() {
   //endregion
 
   //region hooks
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
   const sliderRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (sliderRef.current) {
@@ -51,7 +51,7 @@ function Slider() {
 
   return (
     <div
-      className={`container ${style.sliderContainer} d-flex flex-column gap-custom-12 overflow-hidden`}
+      className={`container ${style.sliderContainer} d-none d-xl-flex flex-column gap-custom-12 overflow-hidden`}
     >
       <div
         className="mt-custom-24 "

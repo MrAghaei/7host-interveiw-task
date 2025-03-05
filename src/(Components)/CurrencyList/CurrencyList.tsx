@@ -24,7 +24,7 @@ function CurrencyList() {
   const [page, setPage] = useState<number>(0);
 
   const { ref: lastCoinItemRef, inView } = useInView({
-    threshold: 1,
+    threshold: 0,
     delay: 2000,
   });
 

@@ -17,10 +17,10 @@ interface BigFeatureProps {
 function BigFeature({ data }: BigFeatureProps) {
   return (
     <div
-      className={`container d-flex align-items-center justify-content-between gap-custom-18 mt-custom-24 ${data.isRtl ? "flex-row-reverse" : ""}`}
+      className={`container px-4 p-xl-0 d-flex flex-column flex-xl-row align-items-center justify-content-between gap-custom-18 mt-custom-24 ${data.isRtl ? "flex-xl-row-reverse" : ""}`}
     >
       <Image
-        className="rounded-circle"
+        className="rounded-circle img-fluid"
         src={data.image}
         alt={data.heading}
         width={528}

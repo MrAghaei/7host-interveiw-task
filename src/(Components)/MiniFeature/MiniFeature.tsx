@@ -1,5 +1,5 @@
 import MiniFeatureCard from "@/(Components)/MiniFeatureCard/MiniFeatureCard";
-
+import style from "./MiniFeature.module.scss";
 function MiniFeature() {
   //region data
   const featureData = [
@@ -10,9 +10,9 @@ function MiniFeature() {
   //endregion
 
   return (
-    <div className="container d-flex align-items-center flex-column gap-5">
+    <div className="container-fluid d-flex align-items-center flex-column gap-2 gap-lg-5">
       <div className="d-flex flex-column align-items-center">
-        <h2 className="fs-1">
+        <h2 className={`fs-1 text-center ${style.customWidth}`}>
           <span className="text-custom-light-text4 fw-bolder">
             Get more done in
           </span>
@@ -22,7 +22,7 @@ function MiniFeature() {
           Simple, fast, effortlessly
         </p>
       </div>
-      <div className="d-flex gap-custom-24">
+      <div className="d-flex flex-column flex-lg-row gap-3 gap-lg-custom-24">
         {featureData.map((data) => (
           <MiniFeatureCard key={data.id} data={data} />
         ))}
