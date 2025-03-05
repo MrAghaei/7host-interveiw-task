@@ -1,0 +1,9 @@
+.customWidth {
+  width: 200px;
+}
+
+@media (min-width: 576px) {
+  .customWidth {
+    width: 100%;
+  }
+}

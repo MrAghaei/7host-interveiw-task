@@ -1,6 +1,7 @@
 import Logo from "@/(Components)/Logo/Logo";
 import Image from "next/image";
 import DarkModeToggle from "@/(Components)/DarkModeToggle/DarkModeToggle";
+import style from "./Footer.module.scss";
 
 function Footer() {
   //region data
@@ -29,8 +30,10 @@ function Footer() {
   //endregion
 
   return (
-    <footer className="container d-flex flex-column align-items-center mt-custom-24 py-custom-12 gap-custom-16">
-      <div className="d-flex w-100 flex-column  gap-5 flex-md-row gap-md-0 align-items-center justify-content-between">
+    <footer
+      className={`container d-flex flex-column align-items-center mt-custom-24 py-custom-12 gap-custom-16 ${style.customWidth}`}
+    >
+      <div className="d-flex w-100 flex-column gap-5 flex-md-row gap-md-0 align-items-center justify-content-between">
         <div className="d-flex gap-custom-14 flex-column align-self-md-start justify-content-between">
           <Logo />
           <DarkModeToggle />
@@ -38,7 +41,7 @@ function Footer() {
         <div className="row row-cols-1 row-cols-md-2 g-2">
           {footerLinks.map((data) => (
             <div key={data.name} className="col d-flex justify-content-center">
-              <button className="btn fw-bold fs-6 text-custom-light-text1">
+              <button className="btn fw-bold fs-6 text-custom-light-text1 me-auto">
                 {data.name}
               </button>
             </div>
