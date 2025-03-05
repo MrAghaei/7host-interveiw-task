@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import style from "./HeaderMobile.module.scss";
+import { ChevronRight } from "lucide-react";
+import CustomButton from "@/(Components)/CustomButton/CustomButton";
 
 function HeaderDesktop() {
   //region hooks
@@ -76,11 +78,11 @@ function HeaderDesktop() {
           </Link>
         </div>
         <div className="d-flex flex-column gap-3 mt-auto">
-          <button
-            className={`btn btn-custom-primary ${style.btnSizingPrimary}`}
-          >
-            Get Started
-          </button>
+          <CustomButton
+            text={"Get Started"}
+            color={"primary"}
+            type={"filled"}
+          />
           <button
             className={`btn text-custom-light-text1 fw-semibold ${style.btnSizingPrimary}`}
           >

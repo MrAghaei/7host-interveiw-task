@@ -1,6 +1,7 @@
 import Image from "next/image";
 import style from "./Hero.module.scss";
-import CtaButton from "@/(Components)/CtaButton/CtaButton";
+import CustomButton from "@/(Components)/CustomButton/CustomButton";
+import { ChevronRight } from "lucide-react";
 function Hero() {
   return (
     <div className="container d-flex justify-content-between flex-column flex-lg-row py-custom-12 px-custom-8 px-lg-0 text-center text-lg-start gap-custom-18">
@@ -15,12 +16,13 @@ function Hero() {
           management technology.
         </p>
         <div className="d-flex flex-column flex-lg-row gap-4">
-          <CtaButton />
-          <button
-            className={`btn border border-custom-border text-custom-primary ${style.btnSizingSecondary}`}
-          >
-            Schedule a Demo
-          </button>
+          <CustomButton
+            text={"Get Started"}
+            color={"secondary"}
+            rightIcon={<ChevronRight />}
+            type={"filled"}
+          />
+          <CustomButton text={"Schedule a Demo"} type={"outlined"} />
         </div>
       </div>
       <Image

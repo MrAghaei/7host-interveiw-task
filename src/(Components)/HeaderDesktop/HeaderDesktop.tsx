@@ -2,6 +2,8 @@ import style from "./HeaderDesktop.module.scss";
 import Logo from "@/(Components)/Logo/Logo";
 import Link from "next/link";
 import HeaderMobile from "@/(Components)/HeaderMobile/HeaderMobile";
+import { ChevronRight } from "lucide-react";
+import CustomButton from "@/(Components)/CustomButton/CustomButton";
 function HeaderDesktop() {
   return (
     <header className="py-custom-3 border-bottom border-custom-border">
@@ -38,11 +40,11 @@ function HeaderDesktop() {
           >
             Sign In
           </button>
-          <button
-            className={`btn btn-custom-primary ${style.btnSizingPrimary}`}
-          >
-            Get Started
-          </button>
+          <CustomButton
+            text={"Get Started"}
+            color={"primary"}
+            type={"filled"}
+          />
         </div>
       </div>
     </header>
