@@ -9,8 +9,8 @@ import CustomButton from "@/(Components)/CustomButton/CustomButton";
 
 function CurrencyList() {
   //region variables
-  const PAGE_NUMBER_TO_SHOW_MORE = 3;
-  const MAX_PAGE_NUMBER_TO_SHOW = 10;
+  const PAGE_NUMBER_TO_SHOW_MORE = 4;
+  const MAX_PAGE_NUMBER_TO_SHOW = 11;
   //endregion
 
   //region functions
@@ -23,7 +23,7 @@ function CurrencyList() {
   //endregion
   //region hooks
   const { fetchCoinsData, coinsData, isAllCoinsFetchLoading } = useCoin();
-  const [page, setPage] = useState<number>(0);
+  const [page, setPage] = useState<number>(1);
 
   const { ref: lastCoinItemRef, inView } = useInView({
     threshold: 0,
@@ -31,7 +31,11 @@ function CurrencyList() {
   });
 
   useEffect(() => {
-    if (inView && page !== 3 && page < MAX_PAGE_NUMBER_TO_SHOW - 1) {
+    if (
+      inView &&
+      page !== PAGE_NUMBER_TO_SHOW_MORE &&
+      page < MAX_PAGE_NUMBER_TO_SHOW - 1
+    ) {
       increasePage();
     }
   }, [inView]);
