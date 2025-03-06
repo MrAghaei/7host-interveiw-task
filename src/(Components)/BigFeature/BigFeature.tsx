@@ -18,7 +18,7 @@ interface BigFeatureProps {
 
 function BigFeature({ data }: BigFeatureProps) {
   //region functions
-  function hexToRgba(hex, opacity) {
+  function hexToRgba(hex: string, opacity: number) {
     hex = hex.replace(/^#/, "");
     const bigint = parseInt(hex, 16);
     const r = (bigint >> 16) & 255;
