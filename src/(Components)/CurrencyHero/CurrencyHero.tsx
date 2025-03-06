@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function CurrencyHero() {
   return (
-    <div className="d-flex justify-content-center align-items-center bg-custom-pink py-custom-18 gap-custom-24">
+    <div className="d-flex flex-column flex-xxl-row px-custom-8  text-center text-xxl-start px-xxl-0 justify-content-center align-items-center bg-custom-pink py-custom-18 gap-custom-24">
       <div className="d-flex flex-column gap-custom-8">
         <h1 className="fs-custom-12 fw-bolder">
           Today’s Cryptocurrency prices
@@ -13,6 +13,7 @@ function CurrencyHero() {
         </p>
       </div>
       <Image
+        className="img-fluid"
         src={"/currencyHero.png"}
         alt={"currency hero"}
         width={520}

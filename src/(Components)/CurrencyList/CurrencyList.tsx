@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useCoin } from "@/(repositories)/hooks/useCoin";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import style from "./CurrencyList.module.scss";
+import CustomButton from "@/(Components)/CustomButton/CustomButton";
 
 function CurrencyList() {
   //region variables
@@ -41,13 +43,12 @@ function CurrencyList() {
   //endregion
 
   return (
-    <div className="container mt-custom-24">
+    <div className="mt-xxl-custom-24">
       <div
-        className="d-flex flex-column bg-custom-light-faq px-custom-10 py-custom-14"
-        style={{ borderRadius: "20px" }}
+        className={`container-xxl d-flex flex-column bg-custom-light-faq px-custom-2 px-xxl-custom-10 py-custom-14 ${style.customBorderRadius}`}
       >
-        <div className="d-flex justify-content-between border-bottom border-custom-currency-border py-custom-3 px-3">
-          <div className="d-flex align-items-center  gap-custom-12">
+        <div className="d-flex justify-content-between  border-bottom border-custom-currency-border py-custom-3 px-3">
+          <div className="d-flex align-items-center gap-custom-12">
             <span className="fs-custom-3 text-custom-currency-text1 fw-bold">
               #
             </span>
@@ -89,8 +90,12 @@ function CurrencyList() {
               </Link>
             </div>
             <div className="d-flex align-items-center gap-custom-12 justify-content-between w-25">
-              <span>{data.price}</span>
-              <span>{data.lastUpdated}</span>
+              <span className={`fw-medium ${style.customFontSize}`}>
+                {data.price}
+              </span>
+              <span className={`fw-medium ${style.customFontSize}`}>
+                {data.lastUpdated}
+              </span>
             </div>
           </div>
         ))}
@@ -98,13 +103,12 @@ function CurrencyList() {
           <div className="text-center">Loading...</div>
         )}
         {!isAllCoinsFetchLoading && page === PAGE_NUMBER_TO_SHOW_MORE && (
-          <button
+          <div
             onClick={handleShowMoreClick}
-            style={{ borderRadius: "32px" }}
-            className="btn btn-custom-primary py-custom-4 px-custom-8 w-25 align-self-center mt-custom-14"
+            className="mt-custom-12 align-self-center"
           >
-            Show More
-          </button>
+            <CustomButton text="Show More" type="filled" color="primary" />
+          </div>
         )}
       </div>
     </div>
