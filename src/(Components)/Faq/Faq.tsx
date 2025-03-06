@@ -69,7 +69,7 @@ function Faq() {
   //endregion
   return (
     <div
-      className={`container-xxl d-flex flex-column align-items-center bg-custom-light-faq p-custom-14 mt-custom-24 ${style.customBorderRadius}`}
+      className={`container-xxl d-flex flex-column align-items-center bg-custom-light-faq py-custom-14 px-xxl-custom-14 mt-custom-24 ${style.customBorderRadius}`}
     >
       <div className="d-flex flex-column align-items-center gap-custom gap-4">
         <h3 className="fw-bolder">FAQ</h3>

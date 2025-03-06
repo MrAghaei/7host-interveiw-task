@@ -49,18 +49,21 @@ function Footer() {
         </div>
         <div className="d-flex align-self-md-start gap-custom-8">
           <Image
+            role="button"
             src={"/instagram.svg"}
             alt={"instagram logo"}
             width={48}
             height={48}
           />
           <Image
+            role="button"
             src={"/twitter.svg"}
             alt={"twitter logo"}
             width={48}
             height={48}
           />
           <Image
+            role="button"
             src={"/facebook.svg"}
             alt={"facebook logo"}
             width={48}

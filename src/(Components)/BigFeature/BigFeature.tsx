@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import CustomButton from "@/(Components)/CustomButton/CustomButton";
-import style from "./BigFeature.module.scss";
 
 //region data types
 export interface BigFeatureDataProps {
