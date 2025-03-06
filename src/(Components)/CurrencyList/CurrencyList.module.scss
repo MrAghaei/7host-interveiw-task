@@ -14,3 +14,11 @@
     font-size: 14px;
   }
 }
+.customFontSizeHeader {
+  font-size: 10px;
+}
+@media (min-width: 1400px) {
+  .customFontSizeHeader {
+    font-size: 12px;
+  }
+}
