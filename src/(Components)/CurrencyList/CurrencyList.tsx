@@ -51,69 +51,65 @@ function CurrencyList() {
       <div
         className={`container-xxl d-flex flex-column bg-custom-light-faq px-custom-2 px-xxl-custom-10 py-custom-14 overflow-x-scroll ${style.customBorderRadius}`}
       >
-        <div className="d-flex justify-content-between  border-bottom border-custom-currency-border py-custom-3 px-3">
-          <div className="d-flex align-items-center gap-custom-12">
-            <span
-              className={`text-custom-currency-text1 fw-bold ${style.customFontSizeHeader}`}
-            >
-              #
-            </span>
-            <span
-              className={`fw-semibold text-custom-currency-text1 ${style.customFontSizeHeader}`}
-            >
-              Name
-            </span>
-          </div>
-          <div className="d-flex align-items-center gap-custom-12 justify-content-between w-25">
-            <span
-              className={`fs-custom-3 fw-semibold text-custom-currency-text1 ${style.customFontSizeHeader}`}
-            >
-              Price (USD)
-            </span>
-            <span
-              className={`fs-custom-3 fw-semibold text-custom-currency-text1 ${style.customFontSizeHeader}`}
-            >
-              Last Updated
-            </span>
-          </div>
+        <div className="row align-items-center justify-content-between  border-bottom border-custom-currency-border py-custom-3 px-3">
+          <span
+            className={`col-1 text-custom-currency-text1 fw-bold ${style.customFontSizeHeader}`}
+          >
+            #
+          </span>
+          <span
+            className={`col-5 fw-semibold text-custom-currency-text1 ${style.customFontSizeHeader} col-lg-7`}
+          >
+            Name
+          </span>
+
+          <span
+            className={`col-1 fs-custom-3 fw-semibold text-custom-currency-text1 ${style.customFontSizeHeader}`}
+          >
+            Price (USD)
+          </span>
+          <span
+            className={`col-2 text-end fs-custom-3 fw-semibold text-custom-currency-text1 ${style.customFontSizeHeader}`}
+          >
+            Last Updated
+          </span>
         </div>
         {coinsData.map((data, index) => (
           <div
             ref={coinsData.length - 1 === index ? lastCoinItemRef : null}
-            className="d-flex justify-content-between py-custom-4 px-3"
+            className="row align-items-center justify-content-between py-custom-4 px-3"
             key={data.id}
           >
-            <div className="d-flex align-items-center gap-custom-12">
-              <span>{index + 1}</span>
-              <Link
-                href={`/currencies/${data.id}`}
-                className="d-flex align-items-center gap-2 btn"
+            <span className="col-1">{index + 1}</span>
+            <Link
+              href={`/currencies/${data.id}`}
+              className="col-5 d-flex align-items-center gap-2 btn col-lg-7"
+            >
+              <Image
+                className="img-fluid"
+                src={data.image}
+                alt={data.name}
+                width={32}
+                height={32}
+              />
+              <span className={`fw-medium ${style.customFontSize}`}>
+                {data.name}
+              </span>
+              <span
+                className={`fw-bold text-custom-light-text4 ${style.customFontSize}`}
               >
-                <Image
-                  className="img-fluid"
-                  src={data.image}
-                  alt={data.name}
-                  width={32}
-                  height={32}
-                />
-                <span className={`fw-medium ${style.customFontSize}`}>
-                  {data.name}
-                </span>
-                <span
-                  className={`fw-bold text-custom-light-text4 ${style.customFontSize}`}
-                >
-                  {data.symbol}
-                </span>
-              </Link>
-            </div>
-            <div className="d-flex align-items-center gap-custom-12 justify-content-between w-25">
-              <span className={`fw-medium ${style.customFontSize}`}>
-                {data.price}
+                {data.symbol}
               </span>
-              <span className={`fw-medium ${style.customFontSize}`}>
-                {data.lastUpdated}
-              </span>
-            </div>
+            </Link>
+
+            <span className={`col-1 fw-medium ${style.customFontSize}`}>
+              {data.price}
+            </span>
+            <span
+              className={`col-2 fw-medium text-end ${style.customFontSize}`}
+            >
+              {data.lastUpdated}
+            </span>
           </div>
         ))}
         {isAllCoinsFetchLoading && (
