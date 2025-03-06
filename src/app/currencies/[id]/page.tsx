@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import HeaderDesktop from "@/(Components)/HeaderDesktop/HeaderDesktop";
 import CurrencyHero from "@/(Components)/CurrencyHero/CurrencyHero";
 import CurrencyDialog from "@/(Components)/CurrencyDialog/CurrencyDialog";
 import { useParams, useRouter } from "next/navigation";
 import { useCoin } from "@/(repositories)/hooks/useCoin";
+import Header from "@/(Components)/Header/Header";
 
 // type Props = {
 //   params: Promise<{ id: string }>;
@@ -51,7 +51,7 @@ function Page() {
 
   return (
     <div className="position-relative min-vh-100">
-      <HeaderDesktop />
+      <Header />
       <CurrencyDialog
         data={coinData}
         isActive={isDialogActive}

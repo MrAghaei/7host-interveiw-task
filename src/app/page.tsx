@@ -1,7 +1,9 @@
 import HeaderDesktop from "@/(Components)/HeaderDesktop/HeaderDesktop";
 import Hero from "@/(Components)/Hero/Hero";
 import MiniFeature from "@/(Components)/MiniFeature/MiniFeature";
-import BigFeature from "@/(Components)/BigFeature/BigFeature";
+import BigFeature, {
+  BigFeatureDataProps,
+} from "@/(Components)/BigFeature/BigFeature";
 import Slider from "@/(Components)/Slider/Slider";
 import HighlightFeature from "@/(Components)/HighlightFeature/HighlightFeature";
 import Faq from "@/(Components)/Faq/Faq";
@@ -12,7 +14,7 @@ import Header from "@/(Components)/Header/Header";
 
 export default function Home() {
   //region data
-  const bigFeatureData = [
+  const bigFeatureData: (BigFeatureDataProps & { id: number })[] = [
     {
       id: 1,
       heading: "Revolutionize your workflow",
