@@ -1,17 +1,16 @@
 .customBorderRadius {
   border-radius: 0px;
-  padding: 0;
 }
 @media (min-width: 1400px) {
   .customBorderRadius {
-    border-radius: 56px;
+    border-radius: 20px;
   }
 }
-.customWidth {
-  width: auto;
+.customFontSize {
+  font-size: 12px;
 }
 @media (min-width: 1400px) {
-  .customWidth {
-    width: 20%;
+  .customFontSize {
+    font-size: 14px;
   }
 }
