@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import CustomButton from "@/(Components)/CustomButton/CustomButton";
+import "./BigFeature.scss";
 
 //region data types
 export interface BigFeatureDataProps {
   heading: string;
-  headingColor: string;
+  color: "red" | "orange" | "purple";
   text: string;
   image: string;
   isRtl: boolean;
@@ -17,26 +18,15 @@ interface BigFeatureProps {
 
 function BigFeature({ data }: BigFeatureProps) {
   //region functions
-  function hexToRgba(hex: string, opacity: number) {
-    hex = hex.replace(/^#/, "");
-    const bigint = parseInt(hex, 16);
-    const r = (bigint >> 16) & 255;
-    const g = (bigint >> 8) & 255;
-    const b = bigint & 255;
-    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-  }
+
   //endregion
 
-  const boxShadowStyle = {
-    boxShadow: `-10px 0px 40px ${hexToRgba(data.headingColor, 0.15)}`,
-  };
   return (
     <div
-      className={`container px-4 p-xl-0 d-flex flex-column flex-xl-row align-items-center justify-content-between gap-custom-18 mt-custom-24 ${data.isRtl ? "flex-xl-row-reverse" : ""}`}
+      className={`big-feature container px-4 p-xl-0 d-flex flex-column flex-xl-row align-items-center justify-content-between gap-custom-18 mt-custom-24 ${data.isRtl ? "flex-xl-row-reverse" : ""} ${data.color}`}
     >
       <Image
-        style={boxShadowStyle}
-        className={`rounded-circle img-fluid `}
+        className="rounded-circle img-fluid custom-img"
         src={data.image}
         alt={data.heading}
         width={528}
@@ -47,9 +37,7 @@ function BigFeature({ data }: BigFeatureProps) {
         style={{ maxWidth: "550px" }}
         dir="ltr"
       >
-        <h2 className={`text-${data.headingColor} fw-bold fs-1`}>
-          {data.heading}
-        </h2>
+        <h2 className="title fw-bold fs-1">{data.heading}</h2>
         <p className="fs-4 text-custom-light-text2">{data.text}</p>
         <div className="align-self-end">
           <CustomButton

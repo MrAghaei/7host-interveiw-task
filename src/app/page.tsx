@@ -18,7 +18,7 @@ export default function Home() {
     {
       id: 1,
       heading: "Revolutionize your workflow",
-      headingColor: "#7737ff",
+      color: "purple",
       text: "We have designed our app for increased efficiency and it will help you to start getting more things done.",
       image: "/rev.png",
       isRtl: false,
@@ -26,7 +26,7 @@ export default function Home() {
     {
       id: 2,
       heading: "Free template library included",
-      headingColor: "#ff9900",
+      color: "orange",
       text: "We have got quite a few already made templates for better project management that you can use now.",
       image: "/temp.png",
       isRtl: true,
@@ -34,7 +34,7 @@ export default function Home() {
     {
       id: 3,
       heading: "Used by teams from all over the globe",
-      headingColor: "#fb5191",
+      color: "red",
       text: "Our app has been trusted by many different teams from around the world and we have got some great reviews.",
       image: "/global.png",
       isRtl: false,
