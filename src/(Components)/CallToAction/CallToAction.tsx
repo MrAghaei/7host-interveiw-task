@@ -5,7 +5,7 @@ import { ChevronRight } from "lucide-react";
 
 function CallToAction() {
   return (
-    <div className="mt-custom-24 ">
+    <div className="mt-xxl-custom-24">
       <div
         className={`container-xxl overflow-hidden position-relative
          d-flex flex-column flex-xxl-row bg-custom-slider-inactive-button
