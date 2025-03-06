@@ -29,7 +29,7 @@ function BigFeature({ data }: BigFeatureProps) {
   //endregion
 
   const boxShadowStyle = {
-    boxShadow: `-10px 0px 30px ${hexToRgba(data.headingColor, 0.2)}`,
+    boxShadow: `-10px 0px 40px ${hexToRgba(data.headingColor, 0.15)}`,
   };
   return (
     <div
