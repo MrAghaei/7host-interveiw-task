@@ -6,6 +6,28 @@ import CurrencyDialog from "@/(Components)/CurrencyDialog/CurrencyDialog";
 import { useParams, useRouter } from "next/navigation";
 import { useCoin } from "@/(repositories)/hooks/useCoin";
 
+// type Props = {
+//   params: Promise<{ id: string }>;
+//   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+// };
+// export async function generateMetadata(
+//   { params, searchParams }: Props,
+//   parent: ResolvingMetadata,
+// ): Promise<Metadata> {
+//   const { id } = await params;
+//
+//   const response = await coinService.getCoinById(id);
+//
+//   const previousImages = (await parent).openGraph?.images || [];
+//
+//   return {
+//     title: response.name,
+//     openGraph: {
+//       images: [`${response.image}`],
+//     },
+//   };
+// }
+
 function Page() {
   //region hooks
   const { fetchCoinById, coinData } = useCoin();
