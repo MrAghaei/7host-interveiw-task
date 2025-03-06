@@ -43,24 +43,32 @@ function CurrencyList() {
   //endregion
 
   return (
-    <div className="mt-xxl-custom-24">
+    <div className="mt-xxl-custom-24 ">
       <div
-        className={`container-xxl d-flex flex-column bg-custom-light-faq px-custom-2 px-xxl-custom-10 py-custom-14 ${style.customBorderRadius}`}
+        className={`container-xxl d-flex flex-column bg-custom-light-faq px-custom-2 px-xxl-custom-10 py-custom-14 overflow-x-scroll ${style.customBorderRadius}`}
       >
         <div className="d-flex justify-content-between  border-bottom border-custom-currency-border py-custom-3 px-3">
           <div className="d-flex align-items-center gap-custom-12">
-            <span className="fs-custom-3 text-custom-currency-text1 fw-bold">
+            <span
+              className={`text-custom-currency-text1 fw-bold ${style.customFontSizeHeader}`}
+            >
               #
             </span>
-            <span className="fs-custom-3 fw-semibold text-custom-currency-text1">
+            <span
+              className={`fw-semibold text-custom-currency-text1 ${style.customFontSizeHeader}`}
+            >
               Name
             </span>
           </div>
           <div className="d-flex align-items-center gap-custom-12 justify-content-between w-25">
-            <span className="fs-custom-3 fw-semibold text-custom-currency-text1">
+            <span
+              className={`fs-custom-3 fw-semibold text-custom-currency-text1 ${style.customFontSizeHeader}`}
+            >
               Price (USD)
             </span>
-            <span className="fs-custom-3 fw-semibold text-custom-currency-text1">
+            <span
+              className={`fs-custom-3 fw-semibold text-custom-currency-text1 ${style.customFontSizeHeader}`}
+            >
               Last Updated
             </span>
           </div>
@@ -78,13 +86,18 @@ function CurrencyList() {
                 className="d-flex align-items-center gap-2 btn"
               >
                 <Image
+                  className="img-fluid"
                   src={data.image}
                   alt={data.name}
                   width={32}
                   height={32}
                 />
-                <span className="fw-medium fs-6">{data.name}</span>
-                <span className="fw-bold text-custom-light-text4">
+                <span className={`fw-medium ${style.customFontSize}`}>
+                  {data.name}
+                </span>
+                <span
+                  className={`fw-bold text-custom-light-text4 ${style.customFontSize}`}
+                >
                   {data.symbol}
                 </span>
               </Link>
