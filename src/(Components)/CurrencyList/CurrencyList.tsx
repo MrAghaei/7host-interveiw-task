@@ -47,7 +47,7 @@ function CurrencyList() {
   //endregion
 
   return (
-    <div className="mt-xxl-custom-24 ">
+    <div className="mt-xxl-custom-24 scrollbar-remove">
       <div
         className={`container-xxl d-flex flex-column bg-custom-light-faq px-custom-2 px-xxl-custom-10 py-custom-14 overflow-x-scroll ${style.customBorderRadius}`}
       >

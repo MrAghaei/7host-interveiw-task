@@ -77,7 +77,7 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 body {
   letter-spacing: -0.01em;
 }
-.fw-bolder {
+body .fw-bolder {
   font-weight: 900 !important;
 }
 .custom-backdrop {
@@ -90,4 +90,10 @@ body {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
 }
+.scrollbar-remove {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 //endregion

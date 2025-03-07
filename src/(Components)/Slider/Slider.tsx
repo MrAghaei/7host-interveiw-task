@@ -8,21 +8,21 @@ function Slider() {
   const slidesData = [
     {
       id: 1,
-      image: "/sliderImage.png",
+      image: "/sliderImage.webp",
       title: "Risk-free 30 day trial to level up your team’s productivity.",
       description:
         "Get started now and take advantage of our 30-day free trial today. No credit card required.",
     },
     {
       id: 2,
-      image: "/sliderImage.png",
+      image: "/sliderImage.webp",
       title: "Boost collaboration with real-time team updates.",
       description:
         "Stay connected and get instant insights on your team’s workflow.",
     },
     {
       id: 3,
-      image: "/sliderImage.png",
+      image: "/sliderImage.webp",
       title: "Manage tasks effortlessly with our intuitive dashboard.",
       description:
         "Streamline your workflow with a user-friendly interface and powerful tools.",

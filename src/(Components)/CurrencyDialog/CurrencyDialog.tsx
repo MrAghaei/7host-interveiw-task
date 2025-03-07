@@ -16,12 +16,12 @@ function CurrencyDialog({
 }: CurrencyDialogProps) {
   if (!isActive) return null;
   return (
-    <div className="w-100 h-100 start-0 top-0 position-absolute row justify-content-center align-items-center custom-backdrop">
+    <div className="w-100 h-100 start-0 top-0 position-absolute d-flex justify-content-center align-items-center custom-backdrop px-custom-4">
       <div
-        className="d-flex gap-custom-12 flex-column bg-white px-custom-4 pb-custom-10 pt-custom-3 w-50 "
-        style={{ borderRadius: "20px" }}
+        className="d-flex gap-custom-12 flex-column bg-white px-custom-4 pb-custom-4 pt-custom-3 w-100"
+        style={{ borderRadius: "20px", maxWidth: "750px" }}
       >
-        <div className="d-flex justify-content-between">
+        <div className="d-flex align-items-center justify-content-between">
           <Image
             src={"/currencyLogo.png"}
             alt={"logo"}
@@ -35,8 +35,8 @@ function CurrencyDialog({
         {!data ? (
           <div className="text-center">Loading...</div>
         ) : (
-          <div className="d-flex flex-column gap-custom-3">
-            <div className="d-flex align-items-center justify-content-between gap-2">
+          <div className="d-flex flex-column flex-xxl-row justify-content-between gap-custom-3">
+            <div className="d-flex flex-column align-items-start justify-content-between gap-2">
               <div>
                 <Image
                   src={data.image}
@@ -50,15 +50,13 @@ function CurrencyDialog({
                   {data.symbol}
                 </span>
               </div>
-              <div>
-                <span className="fs-6 text-custom-light-text2">
-                  {data.lastUpdated} Updated
-                </span>
-              </div>
-            </div>
-            <div>
               <span className="fs-custom-10 fw-bold">
                 {data.price} <span className="text-custom-secondary ">USD</span>
+              </span>
+            </div>
+            <div className="mt-custom-20 mt-xxl-3 align-self-end align-self-xxl-start">
+              <span className="fs-6 text-custom-light-text2">
+                {data.lastUpdated} Updated
               </span>
             </div>
           </div>

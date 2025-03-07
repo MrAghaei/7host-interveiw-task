@@ -1,65 +1,41 @@
-"use client";
-import React, { useEffect, useState } from "react";
 import HeaderDesktop from "@/(Components)/HeaderDesktop/HeaderDesktop";
 import CurrencyHero from "@/(Components)/CurrencyHero/CurrencyHero";
-import CurrencyDialog from "@/(Components)/CurrencyDialog/CurrencyDialog";
-import { useParams, useRouter } from "next/navigation";
-import { useCoin } from "@/(repositories)/hooks/useCoin";
+import CurrencyDialogWrapper from "@/(Components)/CurrencyWrapper/CurrencyWrapper";
+import { coinService } from "@/(repositories)/services/coin.service";
+import { Metadata, ResolvingMetadata } from "next";
 
-// type Props = {
-//   params: Promise<{ id: string }>;
-//   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-// };
-// export async function generateMetadata(
-//   { params, searchParams }: Props,
-//   parent: ResolvingMetadata,
-// ): Promise<Metadata> {
-//   const { id } = await params;
-//
-//   const response = await coinService.getCoinById(id);
-//
-//   const previousImages = (await parent).openGraph?.images || [];
-//
-//   return {
-//     title: response.name,
-//     openGraph: {
-//       images: [`${response.image}`],
-//     },
-//   };
-// }
+type Props = {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const { id } = await params;
 
-function Page() {
-  //region hooks
-  const { fetchCoinById, coinData } = useCoin();
-  const params = useParams<{ id: string }>();
-  const [isDialogActive, setIsDialogActive] = useState(true);
-  const router = useRouter();
+  const response = await coinService.getCoinById(id);
 
-  useEffect(() => {
-    const fetchData = async () => fetchCoinById(params.id);
-    console.log(params);
-    fetchData().then();
-  }, []);
-  //endregion
+  const previousImages = (await parent).openGraph?.images || [];
 
-  //region functions
-  function handleDialogClose(): void {
-    setIsDialogActive(false);
-    router.push("/currencies");
-  }
-  //endregion
+  return {
+    title: response.name,
+    openGraph: {
+      images: [`${response.image}`],
+    },
+  };
+}
+
+async function Page({ params }: { params: { id: string } }) {
+  const { id } = params;
+  const coinData = await coinService.getCoinById(id);
 
   return (
     <div className="position-relative min-vh-100">
       <HeaderDesktop />
-      <CurrencyDialog
-        data={coinData}
-        isActive={isDialogActive}
-        handleDialogClose={handleDialogClose}
-      />
+      <CurrencyDialogWrapper coinData={coinData} />
       <CurrencyHero />
     </div>
   );
 }
-
 export default Page;
