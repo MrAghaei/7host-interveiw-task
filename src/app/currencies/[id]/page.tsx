@@ -25,9 +25,13 @@ export async function generateMetadata(
     },
   };
 }
+interface ParamsInputView {
+  id: string;
+}
+export type ParamsInputPromise = { params: Promise<ParamsInputView> };
 
-async function Page({ params }: { params: { id: string } }) {
-  const { id } = params;
+async function Page({ params }: ParamsInputPromise) {
+  const { id } = await params;
   const coinData = await coinService.getCoinById(id);
 
   return (
