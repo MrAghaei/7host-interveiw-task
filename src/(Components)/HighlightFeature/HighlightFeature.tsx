@@ -18,7 +18,7 @@ function HighlightFeature() {
 
       <Image
         className="img-fluid"
-        src={"/highlightFeature.png"}
+        src={"/highlightFeature.webp"}
         alt={"highlight feature"}
         width={940}
         height={700}

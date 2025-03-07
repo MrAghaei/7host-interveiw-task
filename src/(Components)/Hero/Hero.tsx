@@ -26,8 +26,9 @@ function Hero() {
         </div>
       </div>
       <Image
+        loading={"eager"}
         className="img-fluid align-self-center"
-        src={"/hero.png"}
+        src={"/hero.webp"}
         alt={"hero"}
         width={500}
         height={400}

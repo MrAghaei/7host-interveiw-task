@@ -14,7 +14,7 @@ function CallToAction() {
       >
         <Image
           className="position-absolute top-0 start-0 z-0 opacity-25"
-          src={"/ctaPattern.png"}
+          src={"/ctaPattern.webp"}
           alt={"cta pattern"}
           width={1500}
           height={1000}

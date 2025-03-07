@@ -13,6 +13,7 @@ function CurrencyHero() {
         </p>
       </div>
       <Image
+        loading={"eager"}
         className="img-fluid"
         src={"/currencyHero.png"}
         alt={"currency hero"}
