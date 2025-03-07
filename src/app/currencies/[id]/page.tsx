@@ -28,10 +28,9 @@ import Header from "@/(Components)/Header/Header";
 //   };
 // }
 
-function Page() {
+function Page({ params }) {
   //region hooks
   const { fetchCoinById, coinData } = useCoin();
-  const params = useParams<{ id: string }>();
   const [isDialogActive, setIsDialogActive] = useState(true);
   const router = useRouter();
 
