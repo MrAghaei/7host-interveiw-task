@@ -6,7 +6,7 @@ function Logo() {
     <Link href={"/"}>
       <Image
         loading={"eager"}
-        src="/logo.png"
+        src="/logoMain.png"
         alt="logo"
         width={77}
         height={20}
